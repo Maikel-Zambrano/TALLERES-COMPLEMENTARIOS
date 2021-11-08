@@ -74,10 +74,18 @@ function buscarCarreraPorId(id)
         resolve(carrera);
     })
 }
+///funcion ASYNC/AWAIT
+async function main  (){
+    const estudiante= await buscarEstudiantePorId(1);
+    const carrera = await buscarCarreraPorId(1);
+    console.log(`Estudiante se llama ${estudiante.nombre} y su carrera ${carrera.nombre}`)
+}
+main();
 
 //console.log(carreras);
+//MOSTRAR LOS DATOS DEL ESTUDIANTE 
 console.log("DATOS DEL ESTUDIANTE");
-buscarEstudiantePorId(2)
+buscarEstudiantePorId(1)
 .then((estudiante)=>{
     estudianteAuxiliar= estudiante;
     return buscarCarreraPorId(estudiante.idcarrera);
