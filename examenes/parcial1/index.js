@@ -32,7 +32,7 @@ servidor.listen(PUERTO, ()=>{
     console.log(`Servidor ejecutando http://localhost:${PUERTO}`);
 })
 
-cron.schedule("* * * * *", async()=>{
+cron.schedule("2 * * * *", async()=>{
     try{
         //const conexion = await mongoose.connect(dbConnection);
 
