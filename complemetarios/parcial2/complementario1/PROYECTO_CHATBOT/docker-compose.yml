@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  api:
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      - PORT=5702
+      - MONGO_URI=mongodb://mongo:27017/PRUEBA-CHATBOT
+    ports:
+      - "5702:5702"
+  mongo:
+    image: mongo
