@@ -1,0 +1,20 @@
+#definir version para no tener inconvenientes
+version: "3"
+
+
+#definir dockers
+services:
+  #busca en la carpeta actual archivo con el nombre que se le indicar
+  api:
+    build: .
+    #definir para que se instale primero mongo
+    depends_on:
+      - mongo
+    environment:
+    #definir puerto, ruta y nombre
+      - PORT=5702
+      - MONGO_URI=mongodb://mongo:27017/prueba
+    ports: 
+      - "4000:5702"
+  mongo:
+    image: mongo
